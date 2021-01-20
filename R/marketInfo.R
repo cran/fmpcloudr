@@ -132,14 +132,16 @@ fmpc_symbol_search <- function(query = 'apple inc', limit = 10) {
 
 
 
-#' Current or historical S&P 500 constituents
+#' Current or historical constituents for a specific index
 #'
-#' Shows current or historical companies in the S&P 500
+#' Shows current or historical companies in the S&P 500, Nasdaq, or Dow Jones
 #'
 #' @param period 'current' for current list, 'historical' for a list of
 #'   companies that have been added and the ones that were replaced
 #'
-#' @return data frame of S&P 500 constituents
+#' @param index indicate the index to pull for: sp500, dowjones, nasdaq
+#'
+#' @return data frame of constituents
 #' @export
 #'
 #' @examples
@@ -148,18 +150,19 @@ fmpc_symbol_search <- function(query = 'apple inc', limit = 10) {
 #'
 #' # Must set a valid API token
 #' fmpc_set_token('FMPAPIKEY')
-#' fmpc_symbols_sp500()
-#' fmpc_symbols_sp500('historical')
+#' fmpc_symbols_index()
+#' fmpc_symbols_index('historical','nasdaq')
 #' }
 #'
-fmpc_symbols_sp500 <- function(period = c('current','historical')) {
+fmpc_symbols_index <- function(period = c('current','historical'),index = c('sp500','nasdaq','dowjones')) {
 
   # Default to current
   if (missing(period)) period = 'current'
+  if (missing(index)) period = 'current'
   hlp_select(period, c('current','historical'))
 
   # Set URL
-  pullURL = ifelse(period == 'current', 'sp500_constituent?', 'historical/sp500_constituent?')
+  pullURL = ifelse(period == 'current', paste0(index,'_constituent?'), paste0('historical/',index,'_constituent?'))
 
   # Make GET request
   Result <- fmpc_get_url(pullURL)

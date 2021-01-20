@@ -132,7 +132,7 @@ test_that("Test price request for 100", {
   skip_if(is.null(fmpc_limit_warn) | fmpc_limit_warn != 'testLarge', message = 'Skipping large API pulls')
   # skip_if(fmpc_limit_warn != 'testLarge', message = 'Skipping large API pulls')
   ### Make large API requests
-  spcur = fmpc_symbols_sp500()
+  spcur = fmpc_symbols_index()
   symMrkIdx = fmpc_symbols_by_market('index')
   SP100 = fmpc_price_history(spcur$symbol[1:100])
   expect_equal(length(unique(SP100$symbol)),100)
@@ -168,7 +168,7 @@ test_that("Test pricing with Demo", {
   # ---------- Specific to pricing function
   expect_equal(ncol(hp), 14)                                    # check 14 columns returned
   Numticks = length(unique(hp$symbol))
-  expect_true(nrow(hp) > 18*Numticks & nrow(hp)<23*Numticks)    # check roughly one month returned
+  expect_true(nrow(hp) > 16*Numticks & nrow(hp)<25*Numticks)    # check roughly one month returned
   hp = fmpc_price_history(allSymbs, startDate = '2000-01-01',    # Pull big history file
                          endDate = Sys.Date())
   expect_equal(min(hp$date),as.Date('2000-01-03'))              # Min date should be 1/3/2000

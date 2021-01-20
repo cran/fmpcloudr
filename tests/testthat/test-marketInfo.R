@@ -1,6 +1,6 @@
 ### Testing marketInfo functions:
 # fmpc_symbols_by_market, fmpc_symbols_available, fmpc_symbol_search
-# fmpc_symbols_sp500, fmpc_sp500Hist, fmpc_market_hours, fmpc_cusip_search
+# fmpc_symbols_index, fmpc_market_hours, fmpc_cusip_search
 # fmpc_security_screener
 
 
@@ -37,12 +37,12 @@ test_that("Test marketInfo with valid key", {
   BiggerSearch = fmpc_symbol_search('tech', 100)
   expect_equal(nrow(BiggerSearch),100)
 
-  # Test S&P 500
-  spcur = fmpc_symbols_sp500()
-  expect_equal(nrow(spcur),506)
+  # Test index pull
+  spcur = fmpc_symbols_index()
+  expect_true(nrow(spcur)>500)
   expect_equal(class(spcur)[1],'tbl_df')
   expect_equal(ncol(spcur),8)
-  sphis = fmpc_symbols_sp500('historical')
+  sphis = fmpc_symbols_index('historical','nasdaq')
   expect_equal(class(sphis)[1],'tbl_df')
   expect_true(nrow(sphis)>200)
   expect_equal(ncol(sphis),7)

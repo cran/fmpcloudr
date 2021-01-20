@@ -14,7 +14,7 @@ test_that("Test financials with API", {
 
   zipFl = fmpc_financial_zip()
   expect_equal(ncol(zipFl),2)
-  expect_true(nrow(zipFl)>20000)
+  expect_true(nrow(zipFl)>2000)
 
 
   ### Test financial data pull
@@ -25,21 +25,21 @@ test_that("Test financials with API", {
 
   Bal = fmpc_financial_bs_is_cf(symbols,statement = 'balance')
   BalG = fmpc_financial_bs_is_cf(symbols,statement = 'balance', growth = TRUE)
-  expect_equal(ncol(Bal),46)
+  expect_true(ncol(Bal)>45)
   expect_true(ncol(Bal) != ncol(BalG))
   expect_true(nrow(BalG) > 300)
   expect_equal(class(BalG)[1],'tbl_df')
 
   IS = fmpc_financial_bs_is_cf(symbols,statement = 'income')
   ISa = fmpc_financial_bs_is_cf(symbols,statement = 'income', quarterly = FALSE)
-  expect_equal(ncol(IS), 33)
+  expect_true(ncol(IS)> 30)
   expect_true(ncol(IS) == ncol(ISa))
   expect_true(nrow(IS) > nrow(ISa))
 
 
   cf = fmpc_financial_bs_is_cf(symbols,statement = 'cashflow')
   cfsec = fmpc_financial_bs_is_cf('AAPL',statement = 'cashflow', SECReported  = TRUE)
-  expect_equal(ncol(cf), 37)
+  expect_true(ncol(cf)> 30)
   expect_true(ncol(cf) != ncol(cfsec))
   expect_true(nrow(cf) > nrow(cfsec))
 
@@ -49,21 +49,21 @@ test_that("Test financials with API", {
 
   ### Financial metrics
   ratio = fmpc_financial_metrics(symbols, metric = 'ratios', quarterly = TRUE, trailingTwelve = TRUE, limit = 100)
-  expect_equal(ncol(ratio),58)
+  expect_true(ncol(ratio)>50)
   expect_true(nrow(ratio) == length(symbols))
   expect_equal(class(ratio)[1],'tbl_df')
   expect_true(grepl('TTM', paste0(colnames(ratio), collapse = '')))
 
   keym = fmpc_financial_metrics(symbols, metric = 'key', quarterly = FALSE, trailingTwelve = TRUE, limit = 100)
-  expect_equal(ncol(keym),59)
+  expect_true(ncol(keym)>50)
   expect_true(nrow(keym) == length(symbols))
 
   ev = fmpc_financial_metrics(symbols, metric = 'ev', quarterly = TRUE, trailingTwelve = FALSE, limit = 100)
-  expect_equal(ncol(ev),8)
+  expect_true(ncol(ev)>7)
   expect_true(nrow(ev) >= 100)
 
   growth = fmpc_financial_metrics(symbols, metric = 'growth', quarterly = FALSE, trailingTwelve = FALSE, limit = 120)
-  expect_equal(ncol(growth), 36)
+  expect_true(ncol(growth)> 30)
   expect_true(nrow(growth) >= 30)
 
 
@@ -107,45 +107,45 @@ test_that("Test financials with DEMO", {
 
   Bal = fmpc_financial_bs_is_cf(symbols,statement = 'balance')
   BalG = fmpc_financial_bs_is_cf(symbols,statement = 'balance', growth = TRUE)
-  expect_equal(ncol(Bal),46)
+  expect_true(ncol(Bal)>45)
   expect_true(ncol(Bal) != ncol(BalG))
-  expect_true(nrow(BalG) >= 100)
+  expect_true(nrow(BalG) > 10)
   expect_equal(class(BalG)[1],'tbl_df')
 
   IS = fmpc_financial_bs_is_cf(symbols,statement = 'income')
   ISa = fmpc_financial_bs_is_cf(symbols,statement = 'income', quarterly = FALSE)
-  expect_equal(ncol(IS), 33)
+  expect_true(ncol(IS)> 30)
   expect_true(ncol(IS) == ncol(ISa))
   expect_true(nrow(IS) > nrow(ISa))
 
 
   cf = fmpc_financial_bs_is_cf(symbols,statement = 'cashflow')
   cfsec = fmpc_financial_bs_is_cf('AAPL',statement = 'cashflow', SECReported  = TRUE)
-  expect_equal(ncol(cf), 37)
+  expect_true(ncol(cf)> 30)
   expect_true(ncol(cf) != ncol(cfsec))
   expect_true(nrow(cf) > nrow(cfsec))
 
   int = fmpc_financial_bs_is_cf('RY.TO',statement = 'balance', quarterly = TRUE,
-                             growth = TRUE, SECReported = FALSE, limit = 10)
+                                growth = TRUE, SECReported = FALSE, limit = 10)
   expect_true(nrow(int) >= 10)
 
   ### Financial metrics
   ratio = fmpc_financial_metrics(symbols, metric = 'ratios', quarterly = TRUE, trailingTwelve = TRUE, limit = 100)
-  expect_equal(ncol(ratio),58)
+  expect_true(ncol(ratio)>50)
   expect_true(nrow(ratio) == length(symbols))
   expect_equal(class(ratio)[1],'tbl_df')
   expect_true(grepl('TTM', paste0(colnames(ratio), collapse = '')))
 
   keym = fmpc_financial_metrics(symbols, metric = 'key', quarterly = FALSE, trailingTwelve = TRUE, limit = 100)
-  expect_equal(ncol(keym),59)
+  expect_true(ncol(keym)>50)
   expect_true(nrow(keym) == length(symbols))
 
   ev = fmpc_financial_metrics(symbols, metric = 'ev', quarterly = TRUE, trailingTwelve = FALSE, limit = 100)
-  expect_equal(ncol(ev),8)
+  expect_true(ncol(ev)>7)
   expect_true(nrow(ev) >= 100)
 
   growth = fmpc_financial_metrics(symbols, metric = 'growth', quarterly = FALSE, trailingTwelve = FALSE, limit = 120)
-  expect_equal(ncol(growth), 36)
+  expect_true(ncol(growth)> 30)
   expect_true(nrow(growth) >= 30)
 
 

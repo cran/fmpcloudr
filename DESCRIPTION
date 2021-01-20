@@ -1,6 +1,6 @@
 Package: fmpcloudr
 Title: R Access to the 'FMP Cloud' and 'Financial Modeling Prep' API
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: 
     person(given = "Tony",
            family = "Trevisan",
@@ -21,7 +21,7 @@ RoxygenNote: 7.1.1
 Imports: jsonlite, httr, dplyr, magrittr, tidyr, lubridate
 Suggests: testthat
 NeedsCompilation: no
-Packaged: 2020-10-24 17:44:57 UTC; rstudio
+Packaged: 2021-01-20 16:24:05 UTC; rstudio
 Author: Tony Trevisan [aut, cre]
 Repository: CRAN
-Date/Publication: 2020-11-03 08:10:05 UTC
+Date/Publication: 2021-01-20 16:50:05 UTC

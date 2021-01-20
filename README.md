@@ -5,9 +5,10 @@
 
 <!-- badges: start -->
 
-![Dev Version](https://img.shields.io/badge/github-0.1.0-blue.svg)
+![Dev Version](https://img.shields.io/badge/github-0.1.2-blue.svg)
 ![CRAN
 Version](https://www.r-pkg.org/badges/version/fmpcloudr?color=green)
+![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/fmpcloudr)
 <!-- badges: end -->
 
 R package for accessing the [FMP Cloud](https://fmpcloud.io/) and
@@ -19,12 +20,20 @@ also provides data for 13F, Balance Sheet, Income Statements, Discounted
 Cash Flow, and much more. Create an account to get an API token and
 explore the `fmpcloudr` functions to see the capabilities.
 
+See the
+[article](https://tonytrevisan.github.io/posts/2020-11-01-analyzing-sp500-with-fmp/)
+on analyzing the S&P 500 to see a detailed analysis and working example
+using FMP data.
+
 ## Installation
 
-This package is still in development, so it has not been submitted to
-CRAN. The package can be installed using `devtools`.
+You can install `fmpcloudr` using:
 
 ``` r
+# Available on CRAN
+install.packages('fmpcloudr')
+
+# Pull the GitHub development version - currently same as CRAN
 # install.packages("devtools")
 devtools::install_github("tonytrevisan/fmpcloudr")
 ```
@@ -51,7 +60,6 @@ and Commodities. See the Market Information section below to explore all
 available symbols on FMP.
 
 ``` r
-
 library(fmpcloudr)
 # Set API Token
 # The default setting will buffer requests so that no more than 10 requests are made every second
@@ -92,7 +100,7 @@ fmpc_price_full_market('etf')
 # Get two month price history for the entire S&P 500
 # Note: this will take about two minutes and will generate 500 unique API Calls
 fmpc_set_token('VALID_FMP_API_TOKEN', noBulkWarn = TRUE)
-SP500 = fmpc_symbols_sp500()
+SP500 = fmpc_symbols_index()
 SPPrice = fmpc_price_history(SP500$symbol, startDate = Sys.Date() - 60)
 ```
 
@@ -102,7 +110,6 @@ Use these functions to find available tickers, search for companies,
 check market hours, and screen stocks.
 
 ``` r
-
 # Set API Token
 fmpc_set_token('VALID_FMP_API_TOKEN')
 
@@ -118,11 +125,11 @@ fmpc_symbol_search('tech', 100)
 fmpc_symbol_search('utilit', 100)
 fmpc_symbol_search('Buffer ETF', 100)
 
-# Get a list of all symbols in the S&P 500
-fmpc_symbols_sp500()
+# Get a list of all symbols in the Nasdaq
+fmpc_symbols_index(index= 'nasdaq')
 
 # Find all securities that have been added and removed from the S&P 500
-fmpc_symbols_sp500('historical')
+fmpc_symbols_index('historical')
 
 # Get current day market hours and a list of trading holidays
 fmpc_market_hours()
@@ -143,7 +150,6 @@ profiles, biggest gainers/losers, earnings, analyst
 grades/recommendations, press releases, and earnings call transcripts.
 
 ``` r
-
 # Set API Token
 fmpc_set_token('VALID_FMP_API_TOKEN')
 symbols = c('AAPL','SPY','SWTSX')
@@ -198,7 +204,6 @@ Pull a range of technical indicators over different frequencies and
 periods.
 
 ``` r
-
   # Set API Token
   fmpc_set_token('VALID_FMP_API_TOKEN')
   symbols = c('AAPL', 'SPY')
@@ -311,7 +316,6 @@ Pull data for specific calendar events. Economic data releases can be
 searched with historical data pulled.
 
 ``` r
-
   # Set API Token
   fmpc_set_token('VALID_FMP_API_TOKEN')
   
@@ -342,7 +346,6 @@ searched with historical data pulled.
 The demo API token allows for pulls on Apple.
 
 ``` r
-
 library(fmpcloudr)
 # Set API Token
 fmpc_set_token()
