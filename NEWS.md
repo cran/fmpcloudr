@@ -1,10 +1,14 @@
-# fmpcloudr 0.1.2
+# fmpcloudr 0.1.3
 
 ## Release Notes and News
+
+### fmpcloudr 0.1.3
+Fix fmpc_symbols_index to default to S&P 500. Fix auto tests
 
 ### fmpcloudr 0.1.2 1/20/2021
 Converted fmpc_symbols_sp500 to fmpc_symbols_index
 to allow for the pulling of S&P 500, Nasdaq, and Dow Jones.
+Commit f25d4e5
 
 ### fmpcloudr 0.1.1 10/24/2020
 Approved by CRAN: 2020-11-03 with commit 3089cbc.

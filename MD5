@@ -1,10 +1,10 @@
-0b272145614ac08ad21a1e8ca5e1eaed *DESCRIPTION
+53ca176e6a8aa5cb2da0bdb6f7732f6e *DESCRIPTION
 b3aa1d9763fb97775016fd67991a0e6a *NAMESPACE
-7a86bb0436367d06d3397ad568ecbdce *NEWS.md
+0194081f2045776df439b604a7f7c4cf *NEWS.md
 3c8bbbcbffb1a90b8388892bbf15c253 *R/calendar.R
 d5270d38de1735e5f4cab214c379047e *R/financials.R
 2e1ba365f75c6370c0a95607254f7470 *R/holdings.R
-0cb4d88681e5964c5038fdd7d0dd0161 *R/marketInfo.R
+54a1d26af5a35c6c8868c0b024ce18a0 *R/marketInfo.R
 3b3bab87e84dc0de07858c3ef596578a *R/pricing.R
 e1060cd072efd4241ccf976f61f463a2 *R/secDetails.R
 0693010ec80d764f84559f8e560ac150 *R/securityMetrics.R
@@ -60,6 +60,6 @@ f50c50a9b14337a2d5de0e89de95f5cc *tests/testthat/test-calendar.R
 503bf02ce5c917fb73d1e1218dcf8aa7 *tests/testthat/test-financials.R
 f63798ccc3ba1d8e2417b87bc6962d72 *tests/testthat/test-holdings.R
 b8da68815ed7880435564ab47e98f052 *tests/testthat/test-marketInfo.R
-04f5a61e36c558844ae0ba529637e72c *tests/testthat/test-pricing.R
+f129db5edaf2b8b1f876e070051c7e32 *tests/testthat/test-pricing.R
 7d740f60005f6bb962b56be10160cb30 *tests/testthat/test-secDetails.R
 091a878b96e36235d91c1d772280ae5e *tests/testthat/test-securityMetrics.R

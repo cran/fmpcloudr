@@ -149,7 +149,7 @@ test_that("Test pricing with Demo", {
   # Set Token to DEMO
   # This can be done on CRAN
   expect_warning(fmpc_set_token())
-
+  skip_on_cran()
 
   symbols = c('AAPL')
   fails = c('NOTREAL')

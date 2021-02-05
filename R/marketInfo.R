@@ -158,7 +158,7 @@ fmpc_symbols_index <- function(period = c('current','historical'),index = c('sp5
 
   # Default to current
   if (missing(period)) period = 'current'
-  if (missing(index)) period = 'current'
+  if (missing(index)) index = 'sp500'
   hlp_select(period, c('current','historical'))
 
   # Set URL
