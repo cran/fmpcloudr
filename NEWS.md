@@ -1,6 +1,9 @@
-# fmpcloudr 0.1.3
+# fmpcloudr 0.1.4
 
 ## Release Notes and News
+
+### fmpcloudr 0.1.4
+Switch maintainer
 
 ### fmpcloudr 0.1.3
 Fix fmpc_symbols_index to default to S&P 500. Fix auto tests

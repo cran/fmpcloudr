@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-![Dev Version](https://img.shields.io/badge/github-0.1.2-blue.svg)
+![Dev Version](https://img.shields.io/badge/github-0.1.4-blue.svg)
 ![CRAN
 Version](https://www.r-pkg.org/badges/version/fmpcloudr?color=green)
 ![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/fmpcloudr)
@@ -21,7 +21,7 @@ Cash Flow, and much more. Create an account to get an API token and
 explore the `fmpcloudr` functions to see the capabilities.
 
 See the
-[article](https://tonytrevisan.github.io/posts/2020-11-01-analyzing-sp500-with-fmp/)
+[article](https://exploringfinance.github.io/posts/2020-11-01-analyzing-sp500-with-fmp/)
 on analyzing the S&P 500 to see a detailed analysis and working example
 using FMP data.
 
@@ -35,7 +35,7 @@ install.packages('fmpcloudr')
 
 # Pull the GitHub development version - currently same as CRAN
 # install.packages("devtools")
-devtools::install_github("tonytrevisan/fmpcloudr")
+devtools::install_github("exploringfinance/fmpcloudr")
 ```
 
 # Obtain an API Token

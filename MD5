@@ -1,6 +1,6 @@
-53ca176e6a8aa5cb2da0bdb6f7732f6e *DESCRIPTION
+85d41102c0d3dde6a211ba4b5b933b5c *DESCRIPTION
 b3aa1d9763fb97775016fd67991a0e6a *NAMESPACE
-0194081f2045776df439b604a7f7c4cf *NEWS.md
+0de865ca8e99009560415eb7f803e28d *NEWS.md
 3c8bbbcbffb1a90b8388892bbf15c253 *R/calendar.R
 d5270d38de1735e5f4cab214c379047e *R/financials.R
 2e1ba365f75c6370c0a95607254f7470 *R/holdings.R
@@ -11,7 +11,7 @@ e1060cd072efd4241ccf976f61f463a2 *R/secDetails.R
 800c5af7e109aaa82aae820d085789e4 *R/setup.R
 65cef5e0674056f6fc07dd2b3ca85c13 *R/utils-pipe.R
 9ca5b6b0ca7087ecbeae9defa94c7d7f *R/utils.R
-bab0ef483e3b91440eacb198de8fb2ed *README.md
+4f2d3c50d273be6290ec5cfe1b5bbd6b *README.md
 24a7ea5bf724a72bb3191e980e88ecb9 *man/fmpc_13f_cik_list.Rd
 29b318ee097559618c1abd8939503a03 *man/fmpc_13f_cik_name.Rd
 30a7d08da5252f694be7e0b1611cfc96 *man/fmpc_13f_cik_search.Rd
