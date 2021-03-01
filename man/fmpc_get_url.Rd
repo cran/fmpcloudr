@@ -4,11 +4,14 @@
 \alias{fmpc_get_url}
 \title{GET Request for specific URL}
 \usage{
-fmpc_get_url(URL)
+fmpc_get_url(URL, api_version = "3")
 }
 \arguments{
 \item{URL}{The URL to pull specific data from FMP Cloud. Search parameters
 should be included, but not the API key. Start with the URL after 'api/v3'}
+
+\item{api_version}{The API version of the URL. FMP is constantly updating
+their API and new URLs may be under anew version}
 }
 \value{
 list output of data set

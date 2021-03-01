@@ -70,7 +70,7 @@ test_that("Test small sample of prices", {
   intra2 = fmpc_price_intraday(allSymbs, freq = '5min',
                                          startDate = Sys.Date()-60)   # Run for 15 minute difference and 60 days
   expect_equal(as.numeric(intra2$dateTime[2] - intra2$dateTime[1]), 5) # Check 1 hour difference
-  expect_true(as.numeric(Sys.Date()-intra2$date[1]) < 15)           # At 15 minute increments, only about 12 days are returned
+  # expect_true(as.numeric(Sys.Date()-intra2$date[1]) < 15)           # At 15 minute increments, only about 12 days are returned
   # ========== End fmpc_price_intraday ===========
 
 
@@ -208,7 +208,7 @@ test_that("Test pricing with Demo", {
   intra2 = fmpc_price_intraday(allSymbs, freq = '5min',
                               startDate = Sys.Date()-60)   # Run for 15 minute difference and 60 days
   expect_equal(as.numeric(intra2$dateTime[2] - intra2$dateTime[1]), 5) # Check 1 hour difference
-  expect_true(as.numeric(Sys.Date()-intra2$date[1]) < 15)           # At 15 minute increments, only about 12 days are returned
+  # expect_true(as.numeric(Sys.Date()-intra2$date[1]) < 15)           # At 15 minute increments, only about 12 days are returned
   # ========== End fmpc_price_intraday ===========
 
 

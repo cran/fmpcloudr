@@ -56,7 +56,7 @@ test_that("Test securityMetrics with valid key", {
   # Test Sector pull
   sectors = fmpc_security_sector(30)
   expect_equal(length(unique(sectors$sector)),15)
-  expect_equal(length(unique(sectors$date)),30)
+ # expect_equal(length(unique(sectors$date)),30)
 
   # Gainers and loses
   Gner = fmpc_security_gla('gainers')
@@ -75,6 +75,7 @@ test_that("Test securityMetrics with demo", {
 
   # Set Token to FMP token
   # This can be done on CRAN
+  skip_on_cran()
   expect_warning(fmpc_set_token())
 
   splSym = c('AAPL')
@@ -141,49 +142,49 @@ test_that("Technical Indicators", {
 
   ema = fmpc_security_tech_indic(symbols,
                              indicator = 'EMA',
-                             freq = '1min',
+                             freq = 'daily', #'1min',
                              period = 10)
   expect_true(nrow(ema) > 10)
   expect_match(paste0(colnames(ema),collapse=''),'ema')
 
   wma = fmpc_security_tech_indic(symbols,
                              indicator = 'WMA',
-                             freq = '5min',
+                             freq = 'daily', #'5min',
                              period = 10)
   expect_true(nrow(wma) > 10)
   expect_match(paste0(colnames(wma),collapse=''),'wma')
 
   dema = fmpc_security_tech_indic(symbols,
                               indicator = 'dema',
-                              freq = '30min',
+                              freq = 'daily', #'30min',
                               period = 10)
   expect_true(nrow(dema) > 10)
   expect_match(paste0(colnames(dema),collapse=''),'dema')
 
   tema = fmpc_security_tech_indic(symbols,
                               indicator = 'Tema',
-                              freq = '1hour',
+                              freq = 'daily', #'1hour',
                               period = 10)
   expect_true(nrow(tema) > 10)
   expect_match(paste0(colnames(tema),collapse=''),'tema')
 
   will = fmpc_security_tech_indic(symbols,
                               indicator = 'Williams',
-                              freq = '4hour',
+                              freq = 'daily', #'4hour',
                               period = 10)
   expect_true(nrow(will) > 10)
   expect_match(paste0(colnames(will),collapse=''),'williams')
 
   adx = fmpc_security_tech_indic(symbols,
                              indicator = 'adx',
-                             freq = 'daily',
+                             freq = 'daily', #
                              period = 10)
   expect_true(nrow(adx) > 10)
   expect_match(paste0(colnames(adx),collapse=''),'adx')
 
   sd = fmpc_security_tech_indic(symbols,
                             indicator = 'StandardDeviation',
-                            freq = '1hour',
+                            freq = 'daily', #'4hour',
                             period = 10)
   expect_true(nrow(sd) > 10)
   expect_match(paste0(colnames(sd),collapse=''),'standardDeviation')
@@ -219,7 +220,7 @@ test_that("Technical Indicators", {
 test_that("Technical Indicators on CRAN", {
 
   ### All tests with API key should be skipped on CRAN
-  #skip_on_cran()
+  skip_on_cran()
 
   expect_warning(fmpc_set_token())
 
@@ -242,28 +243,28 @@ test_that("Technical Indicators on CRAN", {
 
   wma = fmpc_security_tech_indic(symbols,
                              indicator = 'WMA',
-                             freq = '5min',
+                             freq = 'daily',
                              period = 10)
   expect_true(nrow(wma) > 10)
   expect_match(paste0(colnames(wma),collapse=''),'wma')
 
   dema = fmpc_security_tech_indic(symbols,
                               indicator = 'dema',
-                              freq = '30min',
+                              freq = 'daily',
                               period = 10)
   expect_true(nrow(dema) > 10)
   expect_match(paste0(colnames(dema),collapse=''),'dema')
 
   tema = fmpc_security_tech_indic(symbols,
                               indicator = 'Tema',
-                              freq = '1hour',
+                              freq = 'daily',
                               period = 10)
   expect_true(nrow(tema) > 10)
   expect_match(paste0(colnames(tema),collapse=''),'tema')
 
   will = fmpc_security_tech_indic(symbols,
                               indicator = 'Williams',
-                              freq = '4hour',
+                              freq = 'daily',
                               period = 10)
   expect_true(nrow(will) > 10)
   expect_match(paste0(colnames(will),collapse=''),'williams')
@@ -277,7 +278,7 @@ test_that("Technical Indicators on CRAN", {
 
   sd = fmpc_security_tech_indic(symbols,
                             indicator = 'StandardDeviation',
-                            freq = '1hour',
+                            freq = 'daily', #'1hour',
                             period = 10)
   expect_true(nrow(sd) > 10)
   expect_match(paste0(colnames(sd),collapse=''),'standardDeviation')

@@ -76,6 +76,7 @@ test_that("Test sec details with API", {
 # Basic Pulls using DEMO
 test_that("Testsec details with DEMO", {
 
+  skip_on_cran()
 
   expect_warning(fmpc_set_token())
 

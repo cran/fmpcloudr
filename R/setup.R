@@ -70,6 +70,8 @@ fmpc_set_token = function(APIToken='demo', timeBtwnReq = .1, noBulkWarn = FALSE)
 #'
 #' @param URL The URL to pull specific data from FMP Cloud. Search parameters
 #'   should be included, but not the API key. Start with the URL after 'api/v3'
+#' @param api_version The API version of the URL. FMP is constantly updating
+#'   their API and new URLs may be under anew version
 #'
 #' @return list output of data set
 #' @export
@@ -82,7 +84,7 @@ fmpc_set_token = function(APIToken='demo', timeBtwnReq = .1, noBulkWarn = FALSE)
 #' # Pull price history for Apple
 #' AppleHist = fmpc_get_url('historical-price-full/AAPL?serietype=line&')
 #' }
-fmpc_get_url = function(URL){
+fmpc_get_url = function(URL, api_version = '3'){
 
   # Get FMP token from options
   fmpc_api <- getOption("fmpc_API_token")
@@ -98,7 +100,7 @@ fmpc_get_url = function(URL){
   }
 
   # Create URL
-  pullURL = paste0('https://fmpcloud.io/api/v3/',URL,'apikey=',fmpc_api)
+  pullURL = paste0('https://fmpcloud.io/api/v',api_version,'/',URL,'apikey=',fmpc_api)
 
   # Make request for JSON return
   result <- httr::GET(url = pullURL,

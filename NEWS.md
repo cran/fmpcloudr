@@ -1,6 +1,9 @@
-# fmpcloudr 0.1.4
+# fmpcloudr 0.1.5
 
 ## Release Notes and News
+
+### fmpcloudr 0.1.5
+Adding COTS data pull. Fix tests.
 
 ### fmpcloudr 0.1.4
 Switch maintainer

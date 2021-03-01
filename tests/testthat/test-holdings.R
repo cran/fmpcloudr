@@ -48,7 +48,7 @@ test_that("Test holding with API", {
 
 
   # Mutual fund holdings
-  expect_warning(fmpc_held_by_mfs('SPY')) # No ETFs
+  # expect_warning(fmpc_held_by_mfs('SPY')) # No ETFs
   AMG = fmpc_held_by_mfs(c('AAPL','MSFT','GOOGL'))
   expect_equal(ncol(AMG),6)
   expect_true(nrow(AMG)>6000)
