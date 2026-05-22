@@ -5,23 +5,23 @@
 
 <!-- badges: start -->
 
-![Dev Version](https://img.shields.io/badge/github-0.1.5-blue.svg)
+![Dev Version](https://img.shields.io/badge/github-0.1.6-blue.svg)
 ![CRAN
 Version](https://www.r-pkg.org/badges/version/fmpcloudr?color=green)
 ![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/fmpcloudr)
 <!-- badges: end -->
 
-R package for accessing the [FMP Cloud](https://fmpcloud.io/) and
-[Financial Modeling Prep](https://financialmodelingprep.com/) API.
-`fmpcloudr` can be used interchangeably with either API key. FMP
-Provides access to a wide range of financial data such as historical
-prices for stocks, indexes, cryptos, currencies, and commodities. FMP
-also provides data for 13F, Balance Sheet, Income Statements, Discounted
-Cash Flow, and much more. Create an account to get an API token and
-explore the `fmpcloudr` functions to see the capabilities.
+R package for accessing the [Financial Modeling
+Prep](https://site.financialmodelingprep.com) API. `fmpcloudr` can be
+used interchangeably with either API key. FMP Provides access to a wide
+range of financial data such as historical prices for stocks, indexes,
+cryptos, currencies, and commodities. FMP also provides data for 13F,
+Balance Sheet, Income Statements, Discounted Cash Flow, and much more.
+Create an account to get an API token and explore the `fmpcloudr`
+functions to see the capabilities.
 
 See the
-[article](https://exploringfinance.github.io/posts/2020-11-01-analyzing-sp500-with-fmp/)
+[article](https://altanalytics.github.io/posts/2020-11-01-analyzing-sp500-with-fmp/)
 on analyzing the S&P 500 to see a detailed analysis and working example
 using FMP data.
 
@@ -30,18 +30,19 @@ using FMP data.
 You can install `fmpcloudr` using:
 
 ``` r
+
 # Available on CRAN
 install.packages('fmpcloudr')
 
 # Pull the GitHub development version - currently same as CRAN
 # install.packages("devtools")
-devtools::install_github("exploringfinance/fmpcloudr")
+devtools::install_github("altanalytics/fmpcloudr")
 ```
 
 # Obtain an API Token
 
-Register an API token on [FMP Cloud](https://fmpcloud.io/) or [Financial
-Modeling Prep](https://financialmodelingprep.com/). To use the package
+Register an API token on the [FMP
+Website](https://site.financialmodelingprep.com). To use the package
 without an API key, see the bottom section ‘Examples using a demo API’
 for API calls on Apple.
 
@@ -60,6 +61,7 @@ and Commodities. See the Market Information section below to explore all
 available symbols on FMP.
 
 ``` r
+
 library(fmpcloudr)
 # Set API Token
 # The default setting will buffer requests so that no more than 10 requests are made every second
@@ -110,6 +112,7 @@ Use these functions to find available tickers, search for companies,
 check market hours, and screen stocks.
 
 ``` r
+
 # Set API Token
 fmpc_set_token('VALID_FMP_API_TOKEN')
 
@@ -150,6 +153,7 @@ profiles, biggest gainers/losers, earnings, analyst
 grades/recommendations, press releases, and earnings call transcripts.
 
 ``` r
+
 # Set API Token
 fmpc_set_token('VALID_FMP_API_TOKEN')
 symbols = c('AAPL','SPY','SWTSX')
@@ -204,6 +208,7 @@ Pull a range of technical indicators over different frequencies and
 periods.
 
 ``` r
+
   # Set API Token
   fmpc_set_token('VALID_FMP_API_TOKEN')
   symbols = c('AAPL', 'SPY')
@@ -316,6 +321,7 @@ Pull data for specific calendar events. Economic data releases can be
 searched with historical data pulled.
 
 ``` r
+
   # Set API Token
   fmpc_set_token('VALID_FMP_API_TOKEN')
   
@@ -346,6 +352,7 @@ searched with historical data pulled.
 The demo API token allows for pulls on Apple.
 
 ``` r
+
 library(fmpcloudr)
 # Set API Token
 fmpc_set_token()

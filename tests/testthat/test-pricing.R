@@ -6,11 +6,9 @@
 # Basic Pulls using Validated API key
 test_that("Test small sample of prices", {
 
-  ### All tests with API key should be skipped on CRAN
   skip_on_cran()
+  skip_if_no_api()
 
-  # Set Token to FMP token
-  # This cannot be done on CRAN
   fmpc_set_token(readRDS('/home/rstudio/Secure/fmp.rds'))
 
   symbols = c('AAPL','SPY','SWTSX','SPY')
@@ -120,11 +118,9 @@ test_that("Test small sample of prices", {
 
 test_that("Test price request for 100", {
 
-  ### All tests with API key should be skipped on CRAN
   skip_on_cran()
+  skip_if_no_api()
 
-  # Set Token to FMP token
-  # This cannot be done on CRAN
   fmpc_set_token(readRDS('/home/rstudio/Secure/fmp.rds'), noBulkWarn = T)
 
 
@@ -146,10 +142,11 @@ test_that("Test price request for 100", {
 # Basic Pulls using DEMO API key
 test_that("Test pricing with Demo", {
 
-  # Set Token to DEMO
-  # This can be done on CRAN
-  expect_warning(fmpc_set_token())
   skip_on_cran()
+  skip_if_no_api()
+
+  # Set Token to DEMO
+  expect_warning(fmpc_set_token())
 
   symbols = c('AAPL')
   fails = c('NOTREAL')

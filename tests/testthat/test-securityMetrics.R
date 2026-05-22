@@ -6,11 +6,9 @@
 # Basic Pulls using Validated API key
 test_that("Test securityMetrics with valid key", {
 
-  ### All tests with API key should be skipped on CRAN
   skip_on_cran()
+  skip_if_no_api()
 
-  # Set Token to FMP token
-  # This cannot be done on CRAN
   fmpc_set_token(readRDS('/home/rstudio/Secure/fmp.rds'))
 
   splSym = c('AAPL','TQQQ')
@@ -73,9 +71,9 @@ test_that("Test securityMetrics with valid key", {
 # Basic Pulls using Validated API key
 test_that("Test securityMetrics with demo", {
 
-  # Set Token to FMP token
-  # This can be done on CRAN
   skip_on_cran()
+  skip_if_no_api()
+
   expect_warning(fmpc_set_token())
 
   splSym = c('AAPL')
@@ -125,8 +123,8 @@ test_that("Test securityMetrics with demo", {
 
 test_that("Technical Indicators", {
 
-  ### All tests with API key should be skipped on CRAN
   skip_on_cran()
+  skip_if_no_api()
 
   fmpc_set_token(readRDS('/home/rstudio/Secure/fmp.rds'),timeBtwnReq = .2)
 
@@ -219,8 +217,8 @@ test_that("Technical Indicators", {
 
 test_that("Technical Indicators on CRAN", {
 
-  ### All tests with API key should be skipped on CRAN
   skip_on_cran()
+  skip_if_no_api()
 
   expect_warning(fmpc_set_token())
 

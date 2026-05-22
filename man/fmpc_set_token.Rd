@@ -25,9 +25,10 @@ Pass a valid FMP API Token to enable all other functions
 }
 \details{
 In order to use the FMP Cloud API, an account must be created at
-\href{https://fmpcloud.io/}{FMP Cloud}. There is a free account option
-that but sets a cap at 250 calls. There are different subscription levels. To
-use this package, the free subscription can be used up to the limit.
+\href{https://site.financialmodelingprep.com}{Financial Modeling Prep}.
+There is a free account option that but sets a cap at 250 calls.
+There are different subscription levels. To use this package, the free
+subscription can be used up to the limit.
 
 Please note that most functions will make an individual API call for each
 symbol passed. If running a function on multiple symbols, be aware this could

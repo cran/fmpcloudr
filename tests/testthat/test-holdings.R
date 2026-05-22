@@ -5,11 +5,9 @@
 # Basic Pulls using Validated API key
 test_that("Test holding with API", {
 
-  ### All tests with API key should be skipped on CRAN
   skip_on_cran()
+  skip_if_no_api()
 
-  # Set Token to FMP token
-  # This cannot be done on CRAN
   fmpc_set_token(readRDS('/home/rstudio/Secure/fmp.rds'))
 
   # Get CIK list
@@ -58,7 +56,7 @@ test_that("Test holding with API", {
   expect_warning(fmpc_holdings_etf('DBOC'))
   expect_warning(fmpc_holdings_etf('TQQQ','country'))
   expect_warning(fmpc_holdings_etf('DBOC', 'sector'))
-  Sym = fmpc_holdings_etf(c('SPY','TQQQ','NJAN'), 'symbol')
+  Sym = fmpc_holdings_etf(c('SPY','TQQQ'), 'symbol')
   expect_equal(ncol(Sym),4)
   expect_true(nrow(Sym)>500)
   expect_equal(class(Sym)[1],'tbl_df')

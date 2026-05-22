@@ -5,11 +5,9 @@
 # Basic Pulls using Validated API key
 test_that("Test calendar with API", {
 
-  ### All tests with API key should be skipped on CRAN
   skip_on_cran()
+  skip_if_no_api()
 
-  # Set Token to FMP token
-  # This cannot be done on CRAN
   fmpc_set_token(readRDS('/home/rstudio/Secure/fmp.rds'))
 
   # Check calendar events
